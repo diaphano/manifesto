@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     
     <style>
         /* Definizione Custom Font Families */
@@ -31,6 +32,13 @@
             color: #0F1E33;
         }
         
+        #formMessage { 
+        	display: block !important;
+    		min-height: 20px;
+    		margin-top: 10px;
+    		padding: 5px;
+		}
+		
         .tricolore-bar {
         	height: 1em;
     		background: linear-gradient(to right, #009246 33%, #F1F1F1 33%, #F1F1F1 66%, #CE2B37 66%);
@@ -71,7 +79,7 @@
                 <a href="manifesto-integrale.html" class="cta-button inline-block border border-white text-white font-medium text-lg px-10 py-3 rounded-lg hover:bg-white hover:text-navy transition duration-300">
                     Leggi il Manifesto
                 </a>
-                <a href="https://mnemonica.com/wp-content/uploads/2025/12/MANIFESTO-per-la-memoria-del-cinema-digitale-italiano.pdf"  class="cta-button inline-block border border-white text-white font-medium text-lg px-10 py-3 rounded-lg hover:bg-white hover:text-navy transition duration-300" target="_blank">
+                <a href="https://mnemonica.com/wp-content/uploads/2026/03/MANIFESTO-per-la-memoria-del-cinema-digitale-italiano-V2.pdf"  class="cta-button inline-block border border-white text-white font-medium text-lg px-10 py-3 rounded-lg hover:bg-white hover:text-navy transition duration-300" target="_blank">
                 Scarica in PDF
                 </a>
             </div>
@@ -146,7 +154,7 @@
 			PROGETTARE LA CONSERVAZIONE
             </h2>
         	<p class="font-inter font-bold text-xl text-center text-white mb-12">
-                La conservazione va reinterpretata come metodo e garanzia di valore futuro del patrimonio digitale che mette insieme interesse pubblico e privato.
+                La conservazione va ripensata come parte della produzione e garanzia di valore futuro del patrimonio digitale, che mette insieme interesse pubblico e privato.
             </p>
 
             <div class="grid md:grid-cols-3 gap-8 pt-8">
@@ -190,29 +198,31 @@
 
         <div class="bg-white p-8 md:p-10 rounded-xl shadow-2xl border border-gray-200">
             <h3 class="font-inter font-bold text-2xl mb-6 text-navy">Sottoscrivi il Manifesto</h3>
-            <form id="submissionForm" class="space-y-4">
+            <form id="submit-to-google-sheet" class="space-y-4">
                 <div>
-                    <label for="nome_cognome" class="block text-sm font-medium text-charcoal mb-1">Nome e Cognome *</label>
-                    <input type="text" id="nome_cognome" name="nome_cognome" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-cyan focus:border-cyan" required>
+                    <label for="Nome_Cognome" class="block text-sm font-medium text-charcoal mb-1">Nome e Cognome *</label>
+                    <input type="text" id="Nome_Cognome" name="Nome_Cognome" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-cyan focus:border-cyan" required>
                 </div>
                 <div>
-                    <label for="azienda_ente" class="block text-sm font-medium text-charcoal mb-1">Azienda / Ente di Appartenenza *</label>
-                    <input type="text" id="azienda_ente" name="azienda_ente" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-cyan focus:border-cyan" required>
+                    <label for="Azienda_Ente" class="block text-sm font-medium text-charcoal mb-1">Azienda / Ente di Appartenenza *</label>
+                    <input type="text" id="Azienda_Ente" name="Azienda_Ente" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-cyan focus:border-cyan" required>
                 </div>
                 <div>
-                    <label for="email" class="block text-sm font-medium text-charcoal mb-1">E-mail (non pubblicata) *</label>
-                    <input type="email" id="email" name="email" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-cyan focus:border-cyan" required>
+                    <label for="Email" class="block text-sm font-medium text-charcoal mb-1">E-mail (non pubblicata) *</label>
+                    <input type="email" id="Email" name="Email" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-cyan focus:border-cyan" required>
                 </div>
                 <div>
-                    <label for="logo_url" class="block text-sm font-medium text-charcoal mb-1">Link al Logo (Opzionale - inserire URL)</label>
-                    <input type="text" id="logo_url" name="logo_url" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-cyan focus:border-cyan">
+                    <label for="Logo_URL" class="block text-sm font-medium text-charcoal mb-1">Link al Logo (Opzionale - inserire URL)</label>
+                    <input type="text" id="Logo_URL" name="Logo_URL" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-cyan focus:border-cyan">
                 </div>
                 
                 <div class="pt-4">
-                    <input type="checkbox" id="consenso_pubblicazione" name="consenso_pubblicazione" class="form-checkbox text-cyan rounded-md" required>
-                    <label for="consenso_pubblicazione" class="ml-2 text-sm text-charcoal/90">Acconsento alla pubblicazione del mio Nome, Cognome, Azienda e Logo nella lista dei Sostenitori. </label>
+                    <input type="checkbox" id="Consenso_Pubblicazione" name="Consenso_Pubblicazione" class="form-checkbox text-cyan rounded-md" required>
+                    <label for="Consenso_Pubblicazione" class="ml-2 text-sm text-charcoal/90">Acconsento alla pubblicazione del mio Nome, Cognome, Azienda e Logo nella lista dei Sostenitori. </label>
                 </div>
-
+                
+                <div class="g-recaptcha" data-sitekey="6LeDwn8sAAAAAImnLuhjienqTK2DY87pTSGY70y6"></div>
+                
                 <button type="submit" class="cta-button w-full bg-cyan text-navy font-bold text-lg px-6 py-3 mt-6 rounded-lg shadow-xl uppercase tracking-wider hover:bg-opacity-90">
                     SOTTOSCRIVI ORA
                 </button>
@@ -226,22 +236,26 @@
             <h2 class="font-playfair font-bold text-4xl md:text-5xl text-center text-white uppercase mb-12 border-b-2 border-cyan pb-4">
                 HANNO GIÀ ADERITO
             </h2>
-            <p class="text-center text-white/70 mb-10">
-                La lista degli enti, aziende e professionisti che supportano la nostra causa. Unisciti a loro!
+            <!--<p class="text-center text-white/70 mb-10">
+                Ecco chi supporta la nostra causa. Unisciti anche tu!
             </p>
+            -->
 
             <div id="loadingMessage" class="text-center text-white/70 text-lg mb-8">
                 Caricamento sostenitori in corso...
             </div>
             
-            <div id="logoGrid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 mb-12 min-h-[100px]">
-                </div>
-
-            <h3 class="font-inter font-bold text-2xl text-cyan mb-6 text-center">Aderenti Individuali e Nomi</h3>
+            <h3 class="font-inter font-bold text-2xl text-cyan mb-6 text-center">Persone</h3>
             <div id="adherentsListContainer" class="max-w-xl mx-auto bg-gray-800 p-6 rounded-xl text-white/90">
                 <ul id="adherentsList" class="list-disc list-inside space-y-2 text-sm md:text-base">
                     </ul>
             </div>
+            
+            <h3 class="font-inter font-bold text-2xl text-cyan my-6 text-center">Enti / Aziende</h3>
+            <div id="logoGrid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 mb-12 min-h-[100px]">
+                </div>
+
+            
         </div>
     </section>
     
@@ -263,8 +277,7 @@
     </section>
 
     <footer class="bg-navy py-10 text-center text-white/60 text-sm">
-        <p>&copy; 2025 Manifesto per la Preservazione del Cinema Digitale Italiano. Tutti i diritti riservati.</p>
-        <p class="mt-2">Promosso dall'Alleanza per la Memoria Digitale. Contatti: <a href="mailto:info@manifestocinema.it" class="text-cyan hover:underline">info@manifestocinema.it</a></p>
+        <p>Iniziativa promossa da <a href="https://mnemonica.com" style="text-decoration:underline">Mnemonica<a> e dedicata al pubblico dominio (<a href="https://creativecommons.org/publicdomain/zero/1.0/deed.it" style="text-decoration:underline">CC0</a>), 2026.</p>
     </footer>
 
     <script>
@@ -350,51 +363,69 @@
         // ====================================================================
         // FUNZIONE DI INVIO FORM
         // ====================================================================
-        document.getElementById('submissionForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const form = e.target;
-            const formMessage = document.getElementById('formMessage'); 
 
-            if (formMessage) {
-                formMessage.textContent = 'Invio in corso...';
-                formMessage.classList.remove('hidden', 'text-red-600', 'text-green-600');
-                formMessage.classList.add('text-cyan');
-            }
+// Aspetta che tutta la pagina sia caricata prima di cercare il form
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // DICHIARA LE VARIABILI (Assicurati che l'ID sia corretto nell'HTML)
+    const form = document.getElementById('submit-to-google-sheet');
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxxsHZnOjoLKC_6jMxcrQKjuHwr_5ie3cCgI1kyudEkGhnudLlpjB8dCU7IZOKzn3-t_Q/exec';
 
-            const formData = new FormData(form);
-            const data = {
-                nome_cognome: formData.get('nome_cognome'),
-                azienda_ente: formData.get('azienda_ente'),
-                email: formData.get('email'),
-                logo_url: formData.get('logo_url'),
-                consenso_pubblicazione: formData.get('consenso_pubblicazione') ? 'SÌ' : 'NO' 
-            };
+    // CONTROLLO DI SICUREZZA: se non trova il form, non crashare
+    if (!form) {
+        console.error("Errore: Non ho trovato un form con id='submit-to-google-sheet'");
+        return;
+    }
 
-            fetch(appsScriptUrl, {
-                method: 'POST',
-                mode: 'no-cors', 
-                body: JSON.stringify(data), 
-                headers: { 'Content-Type': 'application/json' }
-            })
-            .then(() => {
-                if (formMessage) {
-                    formMessage.textContent = 'Adesione inviata con successo! I dati verranno pubblicati dopo l\'approvazione.';
-                    formMessage.classList.remove('text-cyan');
-                    formMessage.classList.add('text-green-600');
-                }
-                form.reset(); 
-                
-                // Aggiornamento automatico della lista dopo 2 secondi
-                setTimeout(fetchSupporters, 2000); 
-            })
-            .catch(error => {
-                console.error('Errore durante l\'invio:', error);
-                if (formMessage) {
-                    formMessage.textContent = 'Si è verificato un errore di rete o configurazione. Riprova.';
-                    formMessage.classList.remove('text-cyan');
-                    formMessage.classList.add('text-red-600');
-                }
+    form.addEventListener('submit', e => {
+        // BLOCCA l'invio standard (quello che ti appende i dati all'URL)
+        e.preventDefault();
+        console.log("Invio intercettato...");
+        
+        const msg = document.getElementById("formMessage");
+
+		// Verifica che il div esista davvero per evitare errori in console
+    	if (!msg) {
+        		console.error("Non trovo l'elemento con id='formMessage'!");
+        		return;
+    	}
+    	
+    
+        // RECUPERA RECAPTCHA
+ 		const captchaResponse = grecaptcha.getResponse();
+    		if (captchaResponse.length === 0) {
+        		msg.textContent = "Per favore, spunta la casella 'Non sono un robot'.";
+        		msg.style.color = "orange";
+        		return;
+    		}
+
+		msg.textContent = "Invio in corso...";
+   		msg.style.color = "blue";
+        
+        
+        // PREPARA I DATI
+        let formData = new FormData(form);
+        formData.append('g-recaptcha-response', captchaResponse);
+
+        // ESEGUI IL FETCH
+        fetch(scriptURL, { 
+        	method: 'POST', 
+        	body: formData, 
+        	mode: 'no-cors' 
+        })
+        .then(() => {
+            // Con 'no-cors' il browser non può leggere se è successo davvero,
+            // ma se lo script è corretto, i dati sono arrivati.
+            console.log("Dati inviati (modalità no-cors)");
+            msg.textContent = "Grazie! La tua adesione è stata inviata.";
+            msg.style.color = "green";
+            form.reset();
+            grecaptcha.reset();
+        })
+        .catch(error => {
+            console.error('Errore!', error);
+            msg.textContent = "Errore di connessione.";
+        });
             });
         });
         
